@@ -17,12 +17,12 @@ inputSearch.onkeyup = async (event) => {
         `http://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${inputSearch.value}`
     );
     const response = await req.json();
-    console.log(response);
+    // console.log(response);
     for (let i = 0; i < response.data.length; i++) {
         var imgUrl = response.data[i].images.original.url;
         // console.log(imgUrl);
-        var imgList = `<div class="col-2 shadow p-2 mb-3 ml-3 mr-3 bg-white rounded">
-                        <img src="${imgUrl}" width="100%" high="100%">
+        var imgList = `<div class="col-2 shadow p-2 mx-2 my-2 bg-white rounded">
+                        <img src="${imgUrl}" width="200" height="100">
                         </div>
                         `
         imgContainer.innerHTML += imgList;
